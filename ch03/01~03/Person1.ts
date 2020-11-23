@@ -1,4 +1,4 @@
-import Person from "../ch02/ch02-02/person/Person";
+import Person from "../../ch02/ch02-02/person/Person";
 
 class Person1 {
     name? : string;
