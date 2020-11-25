@@ -1,0 +1,1 @@
+export type ResultType = [boolean, string // 분명하게 사용 지정]
