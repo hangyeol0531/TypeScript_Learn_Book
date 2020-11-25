@@ -7,7 +7,7 @@ export class calculator{
         return this
     }
 
-    multiply(value : number){
+    multiply(value : number){   
         this.value *= value
         return this //메서드 체인을 구현하려면 메서드가 항상 this를 반환
     }
