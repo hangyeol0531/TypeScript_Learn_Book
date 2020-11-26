@@ -5,4 +5,4 @@ const mixedArray : object[] = [
 ]
 
 const objectsOnly : object[] = pureDelete(mixedArray, (val) => Array.isArray(val))
-console.log(mixedArray, objectsOnly)
+console.log(mixedArray, objectsOnly)ß
