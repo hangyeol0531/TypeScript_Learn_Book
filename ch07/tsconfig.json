@@ -11,5 +11,5 @@
   "noImplicitAny": true,
   "paths": { "*": ["node_modules/*"] }
   },
-  "include": ["src/**/*"]
+  "include": ["src1/**/*"]
 }
