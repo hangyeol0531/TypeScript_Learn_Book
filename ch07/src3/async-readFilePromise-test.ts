@@ -12,3 +12,5 @@ readFilesAll(['../package.json', '../tsconfig.json'])
     console.log('<tsconfig.json> : ', tsconfigJson)
 })
 .catch(err => console.log('error : ', err.message))
+
+console.log()
