@@ -8,7 +8,7 @@ const connectTest = async() =>{
     }catch(e){
         console.log(e.message)
     }finally{
-        connection.close()
+        // connection.close()
     }
 }
 
