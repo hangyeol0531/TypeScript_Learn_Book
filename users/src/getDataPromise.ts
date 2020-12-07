@@ -1,4 +1,4 @@
-import {IUser} from './!User'
+import {IUser} from './IUser'
 
 type GetDataPromiseCallback = (a : IUser[]) => void
 export const getDataPromise = (fn: GetDataPromiseCallback) => (skip : number, limit : number) =>
