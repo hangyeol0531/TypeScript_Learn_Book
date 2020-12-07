@@ -12,7 +12,7 @@ app
 
 app.get('/', (req, res) =>{
     res.json({message : 'Hello world!!'})
-})
+}) 
 
 app.get('/user/:skip/:limit', (req, res) =>{
     const {skip, limit} = req.params

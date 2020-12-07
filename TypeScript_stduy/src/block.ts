@@ -55,7 +55,7 @@ const createNewBlock = (data:string) : Block =>{
         newTimestamp, 
         data
         );
-    const newBlock : Block = new Block(``
+    const newBlock : Block = new Block(
         newIndex, 
         nextHash, 
         previousBlock.hash, 
