@@ -10,6 +10,7 @@ app.get('/', function (req, res, next) {
     res.send('백엔드 정상 동작!');
 });
 // npx - gloabal 아닌 모듈을 실행
+//npx tsc --traceResolution
 app.listen(app.get('port'), function () {
     console.log("server is running on " + process.env.PORT);
 });
