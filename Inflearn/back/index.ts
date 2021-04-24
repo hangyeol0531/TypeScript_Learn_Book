@@ -9,6 +9,7 @@ import passport = require('passport')
 import helmet = require('helmet')
 
 import {Request, Response, NextFunction} from 'express'
+import {sequelize} from './models'
 
 dotenv.config();
 const app = express();
@@ -17,6 +18,13 @@ const prod : boolean = process.env.NODE_ENV === 'production'
 // productio 모드에서는 파일 캐싱, 에러 메세지 감추기
 // developlemnet 모드에서는 파일 캐시 방지, 디버깅 에러메세지를 보여준다.
 app.set('port', prod ? process.env.PORT : 3065)
+sequelize.sync({force : false}) // true로 하면 초기화됨 조심해야함
+  .then(() =>{
+    console.log('db connect')
+  })
+  .catch((err) =>{
+    console.log(err)
+  })
 
 if (prod) {
     app.use(hpp());
