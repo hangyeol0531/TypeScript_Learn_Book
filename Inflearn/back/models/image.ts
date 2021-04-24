@@ -18,7 +18,7 @@ Image.init({
     sequelize,
     modelName : 'Image',
     tableName : 'image',
-    charset : 'utf8', //이모티콘
+    charset : 'utf8', 
     collate : 'utf8_general_ci'
 });
 

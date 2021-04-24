@@ -36,4 +36,4 @@ export const associate = (db : dbType) =>{
 
 }
 
-export default User
+export default User;

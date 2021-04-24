@@ -22,7 +22,7 @@ sequelize.sync({force : false}) // true로 하면 초기화됨 조심해야함
   .then(() =>{
     console.log('db connect')
   })
-  .catch((err) =>{
+  .catch((err : Error) =>{
     console.log(err)
   })
 
