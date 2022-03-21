@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        // 무조건 any라도 타입을 붙여야한다.
+        "noImplicitAny": true
+    }
+}
