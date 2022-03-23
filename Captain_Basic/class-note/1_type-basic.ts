@@ -19,3 +19,6 @@ let person: {name: string, age: number} = {
     name: 'capt',
     age: 100,
 };
+
+// 진위값
+let show: boolean = true;
