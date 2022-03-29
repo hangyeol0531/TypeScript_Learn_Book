@@ -32,3 +32,33 @@ function logTextLength<T>(text: T[]): T[]{
 }
 
 logTextLength<string>(['hi', 'abc']);
+
+// 제네릭 타입 제한2 - 정의된 타입 이용하기
+interface LengthType {
+    length: number;
+}
+
+// 위 속성이 있을 것이다.
+function logTextLength2<T extends LengthType>(text: T): T{
+    text.length;
+    return text;
+}
+
+logTextLength2('a');
+logTextLength2({ length : 10})
+
+// 제네릭 타입 제한3 - keyof
+interface ShoppingItem{
+    name: string;
+    price: number;
+    stock: number;
+}
+
+// 키들 중에 한 가지가 T가 된다.
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T{
+    return itemOption;
+}
+
+// getShoppingItemOption(10);
+// getShoppingItemOption<string>('a');
+getShoppingItemOption("name")
