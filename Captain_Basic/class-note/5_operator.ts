@@ -43,4 +43,4 @@ askSomeoneUnion({name: '디벨러퍼', skill : '웹 개발'});
 askSomeoneUnion({ name : '캡틴', age: 100});
 
 // 속성을 모두 합쳐야한다.
-askSomeoneIntersection({ name : '캡틴', age: 100, skill: ' 웹 개발'})
+askSomeoneIntersection({ name : '캡틴', age: 100, skill: ' 웹 개발'}) 

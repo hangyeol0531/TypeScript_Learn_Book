@@ -1,4 +1,4 @@
-// ts language 서버가 돌아서 타입을 추론함
+// vsCode 내부에서는 ts language 서버가 돌아서 타입을 추론함
 
 
 // 타입 추론 기본 1
@@ -44,4 +44,5 @@ var deatiledItem: DetailDropdown<string> = {
 }
 
 // 가장 적절한 타입(Best Common Type)
+// 가장 근접한 타입을 추론함
 const arr = [0, 1, true, true, true, 'asd']
