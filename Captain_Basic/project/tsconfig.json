@@ -1,0 +1,15 @@
+{
+    // 바로 입력 ctrl + space
+    "compilerOptions": {
+        // js도 ts 에서 함께 사용한다
+        "allowJs": true,
+        // ts를 js로 전환할때 문법
+        "target": "ES6",
+        // 결과물이 어디에 들어가지
+        "outDir": "./built",
+        // Pormise를 인식
+        "moduleResolution": "Node",
+    },
+    // 어떤 폴더를 대상으로 컴파일 시킬 것인가.
+    "include": ["./src/**/*"]
+}

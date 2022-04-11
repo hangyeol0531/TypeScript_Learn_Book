@@ -38,15 +38,6 @@ function createSpinnerElement(id) {
 let isDeathLoading = false;
 let isRecoveredLoading = false;
 
-// api
-/**
- * @typedef {object} CovidSummary
- * @property {Array<object>}
- */
-/**
- * 
- * @returns {Promise<CovidSummary>}
- */
 function fetchCovidSummary() {
   const url = 'https://api.covid19api.com/summary';
   return axios.get(url);
