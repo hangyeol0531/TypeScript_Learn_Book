@@ -2,6 +2,7 @@
     // 바로 입력 ctrl + space
     "compilerOptions": {
         // js도 ts 에서 함께 사용한다
+        // js -> ts 점진적으로 변경할때 사용하면 좋음
         "allowJs": true,
         // ts를 js로 전환할때 문법
         "target": "ES6",
@@ -9,7 +10,12 @@
         "outDir": "./built",
         // Pormise를 인식
         "moduleResolution": "Node",
+        
+        "lib": [ "ES2015", "DOM", "DOM.Iterable" ],
+
+        "noImplicitAny": true,
     },
     // 어떤 폴더를 대상으로 컴파일 시킬 것인가.
-    "include": ["./src/**/*"]
+    "include": ["./src/**/*"],
+    "exclude": ["node_modules", "dist"]
 }
