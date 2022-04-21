@@ -4,13 +4,16 @@
 function $(selector: string) {
   return document.querySelector(selector);
 }
-function getUnixTimestamp(date: any) {
+function getUnixTimestamp(date: Date) {
   return new Date(date).getTime();
 }
 
 // DOM
+
+// DOM
+var a: Element | HTMLElement | HTMLParagraphElement
 const confirmedTotal = $('.confirmed-total');
-const deathsTotal = $('.deaths');
+const deathsTotal: HTMLParagraphElement = $('.deaths');
 const recoveredTotal = $('.recovered');
 const lastUpdatedTime = $('.last-updated-time');
 const rankList = $('.rank-list');
@@ -19,7 +22,7 @@ const recoveredList = $('.recovered-list');
 const deathSpinner = createSpinnerElement('deaths-spinner');
 const recoveredSpinner = createSpinnerElement('recovered-spinner');
 
-function createSpinnerElement(id: any) {
+function createSpinnerElement(id: string) {
   const wrapperDiv = document.createElement('div');
   wrapperDiv.setAttribute('id', id);
   wrapperDiv.setAttribute(
@@ -43,7 +46,13 @@ function fetchCovidSummary() {
   return axios.get(url);
 }
 
-function fetchCountryInfo(countryCode: any, status: any) {
+enum CovidStatus{
+  Confirmed = 'confirmed',
+  Recovered = 'recovered',
+  Deaths = 'deaths',
+}
+
+function fetchCountryInfo(countryCode: string, status: CovidStatus) {
   // params: confirmed, recovered, deaths
   const url = `https://api.covid19api.com/country/${countryCode}/status/${status}`;
   return axios.get(url);
@@ -78,14 +87,14 @@ async function handleListClick(event: any) {
   clearRecoveredList();
   startLoadingAnimation();
   isDeathLoading = true;
-  const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
+  const { data: deathResponse } = await fetchCountryInfo(selectedId, CovidStatus.Deaths);
   const { data: recoveredResponse } = await fetchCountryInfo(
     selectedId,
-    'recovered',
+    CovidStatus.Recovered,
   );
   const { data: confirmedResponse } = await fetchCountryInfo(
     selectedId,
-    'confirmed',
+    CovidStatus.Confirmed,
   );
   endLoadingAnimation();
   setDeathsList(deathResponse);
@@ -98,9 +107,11 @@ async function handleListClick(event: any) {
 
 function setDeathsList(data: any) {
   const sorted = data.sort(
-    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
+    (a: any, b: any) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
   );
-  sorted.forEach(value => {
+  
+  // 인자가 1개일때는 괄호를 생략할 수 있지만 타입을 넣으려면 괄호를 넣어야한다.
+  sorted.forEach((value: any) => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
     const span = document.createElement('span');
@@ -144,7 +155,7 @@ function clearRecoveredList() {
   recoveredList.innerHTML = null;
 }
 
-function setTotalRecoveredByCountry(data) {
+function setTotalRecoveredByCountry(data: any) {
   recoveredTotal.innerText = data[0].Cases;
 }
 
