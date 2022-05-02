@@ -18,4 +18,4 @@ var sum = (a, b) => a + b;
 // typescript arrow function typing
 var sum = (a: number, b: number): number => {
 
-}
+} 

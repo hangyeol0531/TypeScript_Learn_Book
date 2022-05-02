@@ -1,3 +1,9 @@
+// 라이브러리 로딩
+// import 변수명 from '라이브러리 이름'
+
+// 변수, 함수 임포트 문법
+// import {} from '파일 상대 경로'
+
 // @ts-check
 
 // utils
@@ -9,7 +15,7 @@ function getUnixTimestamp(date: Date) {
 }
 
 // DOM
-let a: Element | HTMLElement | HTMLParagraphElement;
+// let a: Element | HTMLElement | HTMLParagraphElement;
 // p tag -> HTMLParagraphElement || span Tag -> HTMLSpanElement
 const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
 const deathsTotal = $('.deaths') as HTMLParagraphElement;
