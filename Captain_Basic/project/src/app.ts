@@ -4,7 +4,8 @@
 // 변수, 함수 임포트 문법
 // import {} from '파일 상대 경로'
 
-// @ts-check
+import axios from 'axios';
+import * as Chart from 'chart.js';
 
 // utils
 function $(selector: string) {

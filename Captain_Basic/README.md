@@ -7,6 +7,7 @@
 ### shorcuts
 - command + shift + p (단축키) -> openSetting(vscode 정의 파일)
 - command + , (preference)
+- command + D 해당 변수 사용하는 부분으로 이동
 
 ### babel
 - 최신 자바스크립트 언어를 변환해주는 작업 javascript compile / transpile
