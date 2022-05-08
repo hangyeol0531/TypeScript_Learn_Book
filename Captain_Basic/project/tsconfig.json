@@ -20,7 +20,7 @@
         "typeRoots": [
             // default 값은 아래 1줄
             "./node_modules/@types",
-            "./types"
+            // "./types"
         ]
     },
     // 어떤 폴더를 대상으로 컴파일 시킬 것인가.
