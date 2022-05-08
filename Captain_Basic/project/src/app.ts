@@ -4,11 +4,11 @@
 // 변수, 함수 임포트 문법
 // import {} from '파일 상대 경로'
 
-// import axios from 'axios';
-// import * as Chart from 'chart.js';
+import axios, { AxiosResponse } from 'axios';
+import * as Chart from 'chart.js';
 
 // 타입 모듈
-import { CovidSummaryResponse } from './cvoid/index';
+import { CountrySummaryResponse, CovidSummaryResponse } from './cvoid/index';
 
 // utils
 function $(selector: string) {
@@ -61,7 +61,10 @@ enum CovidStatus {
   Deaths = 'deaths',
 }
 
-function fetchCountryInfo(countryCode: string, status: CovidStatus) {
+function fetchCountryInfo(
+  countryCode: string,
+  status: CovidStatus
+): Promise<AxiosResponse<CountrySummaryResponse>> {
   // params: confirmed, recovered, deaths
   const url = `https://api.covid19api.com/country/${countryCode}/status/${status}`;
   return axios.get(url);
