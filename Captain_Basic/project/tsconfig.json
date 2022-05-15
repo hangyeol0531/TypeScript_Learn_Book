@@ -7,7 +7,7 @@
         // ts를 js로 전환할때 문법
         "target": "ES6",
         // 결과물이 어디에 들어가지
-        "outDir": "./built",
+        "outDir": "./dist",
         // Pormise를 인식
         "moduleResolution": "Node",
         "lib": [
