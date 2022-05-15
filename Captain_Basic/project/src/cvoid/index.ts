@@ -1,4 +1,4 @@
-interface Country {
+export interface Country {
   Country: string;
   CountryCode: string;
   Date: string;
@@ -6,7 +6,7 @@ interface Country {
   NewDeaths: number;
   NewRecovered: number;
   Preminum: any;
-  Slug: number;
+  Slug: string;
   TotalConfirmed: number;
   TotalDeaths: number;
   TotalRecovered: number;
